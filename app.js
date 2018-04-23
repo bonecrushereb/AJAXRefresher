@@ -1,5 +1,20 @@
 $(document).ready(function() {
   $('#searchButton').click(function() {
-    console.log('clicked');
+    searchYoutube();
   });
 });
+
+function searchYoutube() {
+  $.ajax({
+    url: 'https://www.googleapis.com/youtube/v3/search',
+    dataType: 'json',
+    type: 'GET',
+    data: {
+      key: 'AIzaSyCoRaVE9MNlID2C-iieNNwC19l6_uTQtv0',
+      q: 'surfing',
+      part: 'snippet'
+    }
+  }).done(function(data) {
+    console.log(data);
+  });
+};
