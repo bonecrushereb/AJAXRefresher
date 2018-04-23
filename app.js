@@ -15,6 +15,8 @@ function searchYoutube() {
       part: 'snippet'
     }
   }).done(function(data) {
-    console.log(data);
+    $.each(data['items'], function(idx, val) {
+      console.log(val);
+    });
   });
 };
