@@ -18,8 +18,13 @@ function searchYoutube() {
     }
   }).done(function(data) {
     console.log(data);
+    var nextPage = data.nextPageToken;
+    var prebPage = data.prevPageToken;
     var html = '';
     $.each(data['items'], function(idx, val) {
+      html+='<div class="title">' + val.snippet.title + '</div>';
+      html+='<div class="url">' + val.id.videoId + '</div>';
+      html+='<img class="thumbnail" src="' + val.snippet.thumbnails.medium.url + '" />';
       console.log(val);
     });
     $('#output').html(html);
