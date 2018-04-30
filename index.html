@@ -7,8 +7,14 @@
 </head>
 <body>
   <h1>jQuery AJAX APIs</h1>
-  <div id="output"></div>
+  <h2>What do you want to find?</h2>
+  <input type="text" name="search" id="search" />
   <input type="button" value="search" id="searchButton" />
+  <div class="buttonOptions">    
+    <input type="button" value="previous" class="tokenClass" />
+    <input type="button" value="next" class="tokenClass" />
+  </div>
+  <div id="output"></div>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="app.js"></script>
 </body>
